@@ -71,3 +71,8 @@ Las SVM igualan el F1 (~0.81) pero pierden 0.03–0.04 de AUC frente a los árbo
 ## XGBoost / CatBoost regularizado
 
 Ver `docs/XGB_CAT.md`. Seis configuraciones (xgb_d2, xgb_d4, cat_d3_l10 × dt/full), semilla 42: todas por debajo de ET30 dt y de s04 en loc2 y en dist2, sin complementariedad de errores. No se confirma ninguna; se cierra con s02/s03/s04.
+||||||| 1965816
+
+## Evaluación exacta de congelados + D/E
+
+Ver `docs/FROZEN_DE.md`. s02/s03/s04 reproducidos exactamente (maxdiff 3e-16). loc2: s02 0,8208, s03 0,8198, s04 0,8179; dist2: 0,8104 / 0,8103 / 0,8162. D (ET leaf 10) empeora en todos los folds; E (ET + 3 anomalías climáticas) sin cambio detectable. Sin candidatos nuevos.

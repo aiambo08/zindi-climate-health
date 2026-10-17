@@ -1,0 +1,3 @@
+s02: maxdiff TargetRAUC=3.33e-16, TargetF1 idénticos=True
+s03: maxdiff TargetRAUC=3.33e-16, TargetF1 idénticos=True
+s04: maxdiff TargetRAUC=3.33e-16, TargetF1 idénticos=True
