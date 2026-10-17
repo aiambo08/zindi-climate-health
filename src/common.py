@@ -46,3 +46,15 @@ def score(y, p):
     from sklearn.metrics import f1_score, roc_auc_score
     f1 = f1_score(y, (p >= 0.5).astype(int)); auc = roc_auc_score(y, p)
     return dict(f1=f1, auc=auc, score=0.6*f1 + 0.4*auc)
+
+
+def norm_location(loc):
+    """Nombre de localidad sin el sufijo regional opcional (", Eastern Region"): fusiona solo variantes
+    con coordenadas idénticas (auditado en docs/EXPERIMENTS.md)."""
+    return ", ".join(p for p in loc.split(", ") if "Region" not in p)
+
+def district(loc):
+    """Distrito administrativo: último componente tras quitar 'Uganda' y regiones/subregiones.
+    Verificado manualmente sobre las 51 localidades (reports/location_audit.csv)."""
+    parts = [p for p in loc.split(", ") if p != "Uganda" and "Region" not in p and "region" not in p]
+    return parts[-1]

@@ -1,0 +1,56 @@
+dist2,loc2,latitude,longitude,n_tr,n_te,pos
+Bugweri,"Bukoteka, Bugweri, Uganda",0.6074875,33.5804269,0,43,
+Bugweri,"Matovu, Bugweri, Uganda",0.6101629,33.5639858,0,75,
+Bugweri,"Nawampendo, Bugweri, Uganda",0.5450205,33.5433385,34,0,0.7352941176470589
+Bugweri,"Walanga, Bugweri, Uganda",0.56781165,33.5556359,44,0,0.7272727272727273
+Bugweri,"Walanga, Bugweri, Uganda",0.572743,33.5567879,21,0,0.5714285714285714
+Bugweri,"Wante, Bugweri, Uganda",0.5919605,33.646945849999994,51,0,0.47058823529411764
+Bugweri,"Wante, Bugweri, Uganda",0.594837,33.6446486,49,0,0.6938775510204082
+Entebbe City,"Buwaya, Entebbe City, Uganda",0.0898191,32.4387002,11,0,0.9090909090909091
+Entebbe City,"Buwoya, Entebbe City, Uganda",0.1782373,32.4419036,2,0,0.5
+Entebbe City,"Nakate Furniture, Entebbe Road, Akright City, Mawanyi, Entebbe City, Uganda",0.1450783,32.5446583,41,0,0.6585365853658537
+Iganga,"Bikadho Road, Nkaatu Propeer, Kasokoso North, Iganga, Uganda",0.6083964,33.4826676,418,0,0.631578947368421
+Iganga,"Budhwege, Iganga, Uganda",0.5647584,33.4700786,80,0,0.675
+Iganga,"Bukoyo, Iganga, Uganda",0.5972613,33.4498771,31,0,0.7741935483870968
+Iganga,"Bukwaya, Iganga, Uganda",0.5527759,33.5111882,79,0,0.7215189873417721
+Iganga,"Buligo North, Iganga, Uganda",0.6035336,33.4743009,81,0,0.5925925925925926
+Iganga,"Buligo South, Iganga, Uganda",0.6017292,33.473515,97,0,0.5979381443298969
+Iganga,"Bulubandi Central B, Iganga, Uganda",0.6022071,33.4861567,9,0,0.6666666666666666
+Iganga,"Bulumwaki Church of Uganda Primary School, Kaliro Road, Nkono I, Nkono, Bulumwaki I, Iganga, Uganda",0.7285295,33.4683472,155,0,0.632258064516129
+Iganga,"Buluza, Iganga, Uganda",0.5734196,33.4836547,96,0,0.6354166666666666
+Iganga,"Buseyi, Iganga, Uganda",0.616667,33.5,0,164,
+Iganga,"Busowobi Central, Iganga, Uganda",0.6031936,33.5423698,0,146,
+Iganga,"Izimba, Iganga, Uganda",0.5846463,33.5463441,44,0,0.5681818181818182
+Iganga,"Kakombo, Iganga, Uganda",0.5539843,33.519695,80,0,0.65
+Iganga,"Kasokoso North, Iganga, Uganda",0.6085124,33.4755214,95,0,0.6526315789473685
+Iganga,"Kasokoso South, Iganga, Uganda",0.6051192,33.4756914,114,0,0.7017543859649122
+Iganga,"Kiboyo, Iganga, Uganda",0.5728841,33.5062207,110,0,0.6363636363636364
+Iganga,"Nabidongha B, Iganga, Uganda",0.6076202,33.483891,66,0,0.6363636363636364
+Iganga,"Nabitovu, Iganga, Uganda",0.613881,33.5481516,0,151,
+Iganga,"Nakalama, Iganga, Uganda",0.6289568,33.5193199,0,54,
+Iganga,"Nakavule A, Iganga, Uganda",0.6150487,33.4856704,43,0,0.7209302325581395
+Iganga,"Nakavule B, Iganga, Uganda",0.6134495,33.4840646,14,0,0.5714285714285714
+Iganga,"Nakavule B, Iganga, Uganda",0.6141536,33.48354380000001,24,0,0.625
+Iganga,"Nakigo I, Iganga, Uganda",0.5943817,33.5201704,49,0,0.6938775510204082
+Iganga,"Nakigo I, Iganga, Uganda",0.6009556,33.5190936,0,26,
+Iganga,"Nakigo Ii, Iganga, Uganda",0.5915265,33.5092512,116,0,0.7068965517241379
+Iganga,"Nakisenyi, Iganga, Uganda",0.5617736,33.5359521,81,0,0.6172839506172839
+Iganga,"Namirali, Iganga, Uganda",0.5644855,33.5066864,39,0,0.5641025641025641
+Iganga,"Nawansinge, Iganga, Uganda",0.5852952,33.4694337,120,0,0.6583333333333333
+Iganga,"Nawanzu, Iganga, Uganda",0.547201,33.4889163,80,0,0.6375
+Iganga,"Nawanzu, Iganga, Uganda",0.5495654,33.4903264,66,0,0.7575757575757576
+Iganga,"Wairama, Iganga, Uganda",0.5683326,33.5382959,29,0,0.5862068965517241
+Iganga,"Wairama, Iganga, Uganda",0.57428735,33.5382096,89,0,0.6853932584269663
+Iganga,"Walugogo Estate, Iganga, Uganda",0.6120767,33.4725904,34,0,0.6176470588235294
+Kalangala,"Bunyama, Kagoonya, Bujumba, Kalangala, Uganda",-0.3917979,32.3049251,0,116,
+Kamuli,"Bubago, Kamuli, Uganda",0.7249496,33.0859708,0,29,
+Kamuli,"Bubago, Kamuli, Uganda",0.7254216,33.0988454,0,35,
+Kikuube,"Kabila, Kasonga, Kikuube, Uganda",1.1878917,30.7828167,128,0,0.6484375
+Mayuge,"Bulyampindi Nursery School, Mayuge, Uganda",0.5321849,33.4609567,66,0,0.6363636363636364
+Mayuge,"Buwaiswa, Mayuge, Uganda",0.5263976,33.5198182,48,0,0.7083333333333334
+Mayuge,"Kabayingire Primary School, Namakunyu, Mayuge, Uganda",0.5317979,33.5384153,61,0,0.639344262295082
+Mayuge,"Luyira, Mayuge, Uganda",0.55,33.45,90,0,0.6666666666666666
+Mayuge,"Namadhi B, Mayuge, Uganda",0.2535645,33.4599137,3,0,0.3333333333333333
+Mbale City,"Magada, Mbale City, Bugisa sub-region, Uganda",1.0723428,34.2266467,158,0,0.6392405063291139
+Mitooma,"Kayanga, Mitooma, Uganda",-0.5902112,30.0569395,0,61,
+Sembabule,"Lubaale, Lwemiyaga, Sembabule, Uganda",0.1951289,31.0549641,0,130,
