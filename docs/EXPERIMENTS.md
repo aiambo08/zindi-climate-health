@@ -56,3 +56,14 @@ Las features de clima/temperatura **perjudican** fuera de localidad, sobre todo 
 **Descartado:** conteos de defunciones por localidad en ventanas de ±3/7/30/90 días y fracción de menores de 5 años en la ventana (sin etiquetas, calculados con train+test): correlación con y < 0.07 y sin mejora (loc 0.8163 → 0.8155).
 
 **Candidato s04** = media(et30_mf1, lgbm_slow, lr_spline_age), solo demo+time y 3 semillas: loc 0.8179, estratificado 0.8167, fecha 0.8190 (s03: 0.8140 / 0.8170 / 0.8167). Correlación con s03 de 0.994, con 24 de 1030 predicciones F1 cambiadas.
+
+## SVM (2026-10-17, `src/exp6.py`)
+SVC RBF + StandardScaler, probabilidades Platt (`probability=True`). Score loc / dist:
+| modelo | loc | dist | AUC loc |
+|---|---|---|---|
+| svm_rbf C=0.3, demo+time | 0.8059 | 0.8072 | 0.793 |
+| svm_rbf C=1, demo+time | 0.8015 | 0.8039 | 0.784 |
+| svm_rbf C=3, demo+time | 0.7984 | 0.8010 | 0.779 |
+| svm_rbf C=1, todas las features | 0.7919 | 0.7913 | 0.765 |
+
+Las SVM igualan el F1 (~0.81) pero pierden 0.03–0.04 de AUC frente a los árboles (0.82). Añadir `svm_rbf_dt` al ensemble de s04 baja el score por localidad de 0.8179 a 0.8173. **Descartado.**
