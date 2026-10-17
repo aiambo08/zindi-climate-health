@@ -36,3 +36,23 @@ Las diferencias entre las mejores configuraciones (±0.003) están por debajo de
 - Target encoding de la localidad: el 97,5 % del test son localidades nuevas.
 - Stacking y pesos optimizados: el riesgo de sobreajustar las OOF es mayor que la ganancia esperable.
 - Datos climáticos externos: las variables climáticas proporcionadas no aportan señal en ningún esquema, así que es improbable que otras más finas cambien el resultado.
+
+## Fase 2 (2026-10-17)
+
+**Leaderboard público** (`reports/public_lb.jsonl`): s02 = 0.8343 (AUC 0.8370, F1 0.8325); s03 = 0.8368 (AUC 0.8408, F1 0.8341). Ambos por encima del OOF por localidad (≈0.815): la validación es algo pesimista pero no está rota, y el orden s03 > s02 coincide con la hipótesis de que lo más suave generaliza mejor.
+
+**Nuevo esquema `dist`** (StratifiedGroupKFold por distrito, 2.º campo de `location`): el test incluye 4 distritos no vistos en train (Lwemiyaga, Kagoonya, Kamuli, Mitooma). Las columnas antiguas de `data/splits.csv` no cambian.
+
+**Resultados (`src/exp5.py`)**, score loc / dist:
+| modelo | demo+time+orig+clim | solo demo+time |
+|---|---|---|
+| et30_mf1 | 0.8153 / 0.8158 | 0.8163 / 0.8182 |
+| lgbm_slow | 0.8110 / 0.8122 | 0.8161 / 0.8120 |
+| lr_spline_age | 0.7900 / 0.7959 | 0.8134 / 0.8138 |
+| lr_spl_ay (splines edad y año) | 0.7916 / 0.8027 | 0.8105 / 0.8141 |
+
+Las features de clima/temperatura **perjudican** fuera de localidad, sobre todo a los modelos lineales (inestabilidad: ±0.04–0.07 entre folds en dist). Edad sola: 0.797.
+
+**Descartado:** conteos de defunciones por localidad en ventanas de ±3/7/30/90 días y fracción de menores de 5 años en la ventana (sin etiquetas, calculados con train+test): correlación con y < 0.07 y sin mejora (loc 0.8163 → 0.8155).
+
+**Candidato s04** = media(et30_mf1, lgbm_slow, lr_spline_age), solo demo+time y 3 semillas: loc 0.8179, estratificado 0.8167, fecha 0.8190 (s03: 0.8140 / 0.8170 / 0.8167). Correlación con s03 de 0.994, con 24 de 1030 predicciones F1 cambiadas.

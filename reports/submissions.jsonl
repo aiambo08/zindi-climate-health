@@ -1,3 +1,4 @@
 {"file": "s01_et20_base.csv", "sha256_16": "21ed4998f0556f31", "models": ["et20"], "blocks": ["demo", "time", "orig", "clim"], "seeds": [42, 43, 44], "pos_rate": 0.708}
 {"file": "s02_et30mf1_lgbmslow.csv", "sha256_16": "4d0bd87c5cbc1309", "models": ["et30_mf1", "lgbm_slow"], "blocks": ["demo", "time", "orig", "clim"], "seeds": [42, 43, 44], "pos_rate": 0.69}
 {"file": "s03_et30mf1_lgbmslow_lrspline.csv", "sha256_16": "4285336f4b73e826", "models": ["et30_mf1", "lgbm_slow", "lr_spline_age"], "blocks": ["demo", "time", "orig", "clim"], "seeds": [42, 43, 44], "pos_rate": 0.708}
+{"file": "s04_dt_et30_lgbm_lrspline.csv", "sha256_16": "c42d3cae5548a4d9", "models": ["et30_mf1", "lgbm_slow", "lr_spline_age"], "blocks": ["demo", "time"], "seeds": [42, 43, 44], "pos_rate": 0.714}
