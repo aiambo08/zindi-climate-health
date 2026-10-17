@@ -3,12 +3,21 @@ from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler, SplineTransformer
+from sklearn.preprocessing import StandardScaler, SplineTransformer, PolynomialFeatures
 from sklearn.compose import ColumnTransformer
 from lightgbm import LGBMClassifier
 from catboost import CatBoostClassifier
 
+def _spl(cols, C=1.0, k=6, inter=False):
+    tf = [(c, SplineTransformer(n_knots=k, degree=3), [c]) for c in cols]
+    steps = [ColumnTransformer(tf, remainder=StandardScaler())]
+    if inter: steps.append(PolynomialFeatures(2, interaction_only=True, include_bias=False))
+    return make_pipeline(*steps, StandardScaler(), LogisticRegression(C=C, max_iter=5000))
+
 def make(name, seed=42):
+    if name == "lr_spl_ay": return _spl(["age", "year"])
+    if name == "lr_spl_ay_c01": return _spl(["age", "year"], C=0.1)
+    if name == "lr_spl_ay_int": return _spl(["age", "year"], C=0.05, k=5, inter=True)
     if name == "dummy": return DummyClassifier(strategy="prior")
     if name == "lr": return make_pipeline(StandardScaler(), LogisticRegression(C=1.0, max_iter=2000))
     if name == "lr_spline_age":
