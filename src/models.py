@@ -7,6 +7,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler, SplineTransformer, PolynomialFeatures
 from sklearn.compose import ColumnTransformer
 from lightgbm import LGBMClassifier
+from xgboost import XGBClassifier
 from catboost import CatBoostClassifier
 
 def _spl(cols, C=1.0, k=6, inter=False):
@@ -46,4 +47,11 @@ def make(name, seed=42):
                                              random_state=seed, n_jobs=8, verbose=-1)
     if name == "cat": return CatBoostClassifier(iterations=600, learning_rate=0.03, depth=5, l2_leaf_reg=5,
                                                 random_seed=seed, verbose=0, thread_count=8)
+    if name in ("xgb_d2", "xgb_d4"):  # mismo lr/iteraciones/submuestreo/L2 que lgbm_slow
+        return XGBClassifier(n_estimators=600, learning_rate=0.01, max_depth=int(name[-1]), min_child_weight=10,
+                             subsample=0.7, colsample_bytree=0.6, reg_lambda=5.0, tree_method="hist",
+                             random_state=seed, n_jobs=8, verbosity=0)
+    if name == "cat_d3_l10":  # cat_reg con depth 4->3 y l2_leaf_reg 20->10
+        return CatBoostClassifier(iterations=800, learning_rate=0.02, depth=3, l2_leaf_reg=10, rsm=0.7,
+                                  random_seed=seed, verbose=0, thread_count=8)
     raise KeyError(name)
