@@ -34,6 +34,8 @@ def features(df, blocks=("demo","time","orig","clim")):
     if "agex" in blocks:
         X["log_age"] = np.log1p(df.age); X["u1"] = (df.age < 1).astype(int); X["u5"] = (df.age < 5).astype(int)
         X["age65"] = (df.age >= 65).astype(int); X["age_x_year"] = np.log1p(df.age) * (d.dt.year - 2015)
+    if "clim_red" in blocks:
+        X["dtemp_30_90"] = df.tavg_30d - df.tavg_90d; X["rain30_rate_vs90"] = df.rain_sum_30d / 30 - df.rain_sum_90d / 90; X["dndvi"] = df.ndvi_30d - df.ndvi_90d
     if "clim_fe" in blocks:
         X["dtemp_7_90"] = df.tavg_7d - df.tavg_90d; X["dtemp_30_90"] = df.tavg_30d - df.tavg_90d
         X["rain7_rate_vs90"] = df.rain_sum_7d / 7 - df.rain_sum_90d / 90; X["rain30_rate_vs90"] = df.rain_sum_30d / 30 - df.rain_sum_90d / 90
