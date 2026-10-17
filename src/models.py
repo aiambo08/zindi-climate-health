@@ -38,7 +38,6 @@ def make(name, seed=42):
     if name == "rf20": return RandomForestClassifier(1000, min_samples_leaf=20, max_features=0.5, n_jobs=8, random_state=seed)
     if name == "cat_reg": return CatBoostClassifier(iterations=800, learning_rate=0.02, depth=4, l2_leaf_reg=20, rsm=0.7,
                                                 random_seed=seed, verbose=0, thread_count=8)
-    if name == "et10_mf1": return ExtraTreesClassifier(1000, min_samples_leaf=10, max_features=1.0, n_jobs=8, random_state=seed)
     if name == "et30_mf1": return ExtraTreesClassifier(1000, min_samples_leaf=30, max_features=1.0, n_jobs=8, random_state=seed)
     if name == "et10_mf1": return ExtraTreesClassifier(1000, min_samples_leaf=10, max_features=1.0, n_jobs=8, random_state=seed)
     if name == "rf": return RandomForestClassifier(500, min_samples_leaf=5, max_features=0.5, n_jobs=8, random_state=seed)
