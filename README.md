@@ -40,6 +40,7 @@ python src/verify.py submissions/s02_et30mf1_lgbmslow.csv /ruta/a/referencia.csv
 | `python exp_baselines.py`, `exp2.py`, `exp3.py`, `exp4.py` | Bloques de experimentos; añaden líneas a `reports/experiments.jsonl` y guardan las OOF en `oof/` |
 | `python ens.py a,b c,d` | Score OOF de promedios simples de probabilidades |
 | `python predict.py NOMBRE m1,m2 bloques SEMILLAS` | Entrena con todo train y escribe un CSV validado |
+| `python mlp.py` | Bloque MLP N1–N4 (cribado, semilla 42, loc2/dist2) → `reports/mlp/`, informe en `docs/MLP.md` |
 
 ## Estructura
 
