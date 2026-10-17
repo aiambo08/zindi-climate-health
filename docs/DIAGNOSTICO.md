@@ -1,5 +1,7 @@
 # Diagnóstico (bloque post-s04)
 
+> Revisión: la validación principal es `loc2` y la de robustez es `dist2`; `loc` se conserva solo como histórico. Los resultados con sufijo `~` son de una semilla, salvo que se indique otra cosa. Las secciones marcadas *[Corregido]* se han reescrito tras la revisión.
+
 s02, s03 y s04 están congelados en `submissions/frozen/` (solo lectura, `SHA256SUMS`). En este bloque no se ha generado ningún candidato nuevo ni se ha hecho ninguna submission.
 
 Reproducción: `cd src && python splits.py && python diag.py && python diag2.py`. Salidas en `reports/diag/`:
@@ -39,7 +41,7 @@ Reproducción: `cd src && python splits.py && python diag.py && python diag2.py`
 
 Lectura:
 - **No hay indicios de exceso de regularización.** Los modelos con más capacidad (RF y CatBoost) tienen un train más alto, pero su OOF es igual o peor. El hueco train–OOF crece con la capacidad: es de 0,02 en LR, 0,02–0,04 en ET y LightGBM y de 0,05–0,08 en RF y CatBoost.
-- **Todos los modelos están dentro de ±0,005.** Esa diferencia es menor que la desviación típica entre folds (0,005–0,02).
+- **Todos los modelos reales quedan dentro de ±0,005 en score global.** *[Corregido]* Esto no prueba que sean equivalentes. Las diferencias emparejadas por fold sobre los mismos splits están en `reports/diag/paired_vs_s04.csv` (ver la sección 6).
 - **Riesgo de extrapolación del clima en LR.** Al retener Mbale City (fold 5 de `dist2`), LR con clima cae a un score de 0,35: predice positivos en solo el 46 % de los casos, frente a un 64 % real. Con `dt` el mismo fold da 0,81–0,82. Los árboles no sufren esa caída porque no extrapolan.
   - Es relevante porque el 36 % de las filas de test (371) son de 4 distritos que no aparecen en train: Kalangala, Kamuli, Mitooma y Sembabule.
   - Esto **no** demuestra que el clima no tenga señal. Muestra que el clima en niveles absolutos, metido en un modelo lineal, extrapola mal.
@@ -90,11 +92,11 @@ Limitaciones:
   - Menores de 1 año y de 1–4 años: se predicen siempre como positivos (pred_pos = 1,0). Dentro de esos grupos el AUC es 0,57–0,80 y hay 236 + 48 FP.
   - 65+: se predicen casi siempre como negativos (3 %), lo que da 159 FN.
   - 15–64: F1 de 0,49–0,65. La mayor parte de la confusión está aquí.
-  - En resumen, el modelo apenas ordena *dentro* de cada tramo de edad.
+  - *[Corregido]* Una predicción constante a 0,5 dentro de un grupo de edad no implica que el modelo no ordene dentro de ese grupo. El AUC dentro de grupo es 0,78 en <1 año, 0,56 en 1–4 y 0,62 en 65+. Sí hay ordenamiento en <1 año; es débil en 1–4 y en 5–64.
 - **Año.**
-  - 2018–19: el modelo predice un 72 % de positivos frente a un 49 % real. En 2020+ predice un 78 % frente a un 55 % real.
+  - 2018–19: el 72 % de las predicciones queda por encima de 0,5, frente a una prevalencia del 49 %; la probabilidad media es 0,59. En 2020+ el 78 % queda por encima de 0,5, frente a una prevalencia del 55 %, pero la probabilidad media (0,55) coincide con la prevalencia. *[Corregido]* En 2020+ no hay una sobreestimación del nivel. Lo que falla es el ordenamiento dentro del periodo (AUC 0,61).
   - El score en esos años es de 0,63–0,69, frente a 0,84–0,86 en los anteriores.
-  - Hay una caída de prevalencia en años recientes que el modelo no captura. Puede ser tendencia o ruido, porque son 240–516 filas.
+  - La prevalencia cae en los años recientes. El modelo lo sigue en media, pero ordena mal dentro de esos periodos. El bloque A/B/C (`docs/TEMPORAL_ABC.md`) contrasta esta hipótesis.
   - El test tiene la misma distribución de años que train.
 - **Género y zona:** diferencias pequeñas (0,81–0,83).
 - **Localidad:** el rango es 0,77–0,87, sin outliers claros más allá del tamaño.
@@ -117,14 +119,27 @@ Ablaciones:
 - Quitar cualquier componente de s04~ cambia el score en ±0,003.
 - En `dist2`, quitar la LR de s03~ no le hace daño.
 
-**Conclusión:** ensemble, pareja y modelo individual son equivalentes dentro del ruido. El ensemble no aporta una mejora clara, pero reduce el riesgo en los peores folds.
+**Conclusión (corregida).** Todas las cifras son de una semilla salvo que se indique otra cosa. Diferencias emparejadas frente a s04~ en `reports/diag/paired_vs_s04.csv`:
+
+- **loc2:**
+  - s02~ y s03~ mejoran en 4 de 5 folds, con una diferencia media de +0,002 a +0,003.
+  - `et30` y `lgbm` en solitario mejoran en solo 2 de 5.
+  - `lr_spline` en solitario empeora en los 5 folds (−0,005).
+- **dist2:**
+  - s03~ pierde 0,038 en el fold de Mbale.
+  - `lgbm+lr_spline` mejora en 5 de 6 folds (+0,002).
+- **Peor fold en dist2:**
+  - s04~ = 0,788.
+  - `et30` solo = 0,770 y `lr_spline` solo = 0,782; frente a estos dos, el ensemble sí protege.
+  - `lgbm` full solo = 0,797, más alto que s04~; frente a él el ensemble no protege.
+  - No se afirma que el ensemble proteja el peor fold en general.
 
 ## Respuesta a la pregunta del bloque
 - **Grupos de validación.** Brac estaba partido. Corregirlo cambia ~0,003 y no modifica el ranking. **No es la limitación principal.**
 - **Exceso de regularización.** No hay indicios: más capacidad sube el train sin subir el OOF. Falta probar una capacidad moderada con features de edad más ricas (C1–C2 abajo).
 - **Representación de la edad e interacciones.** Es la hipótesis más plausible:
-  - El modelo apenas ordena dentro de cada tramo de edad.
-  - La sobreestimación en 2018+ apunta a una interacción edad × año que no se está modelando.
+  - El ordenamiento dentro de grupo es débil en 1–4 y en 5–64 años.
+  - En 2018+ el ordenamiento dentro del periodo es pobre. Hipótesis: interacción edad × año. *Contrastada en A/B/C: no se confirma (ver `docs/TEMPORAL_ABC.md`).*
   - Sin probar todavía.
 
 ## 4. Matriz propuesta (NO ejecutada; ≤ 8 configuraciones)
