@@ -67,3 +67,7 @@ SVC RBF + StandardScaler, probabilidades Platt (`probability=True`). Score loc /
 | svm_rbf C=1, todas las features | 0.7919 | 0.7913 | 0.765 |
 
 Las SVM igualan el F1 (~0.81) pero pierden 0.03–0.04 de AUC frente a los árboles (0.82). Añadir `svm_rbf_dt` al ensemble de s04 baja el score por localidad de 0.8179 a 0.8173. **Descartado.**
+
+## XGBoost / CatBoost regularizado
+
+Ver `docs/XGB_CAT.md`. Seis configuraciones (xgb_d2, xgb_d4, cat_d3_l10 × dt/full), semilla 42: todas por debajo de ET30 dt y de s04 en loc2 y en dist2, sin complementariedad de errores. No se confirma ninguna; se cierra con s02/s03/s04.
