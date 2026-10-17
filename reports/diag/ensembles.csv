@@ -1,0 +1,67 @@
+scheme,combo,f1,auc,score
+loc,best_individual:et30_mf1|dt,0.8126,0.8218,0.8163
+loc,pair:et30_mf1+lr_spline_age|dt,0.8156,0.8187,0.8168
+loc,pair:lgbm_slow+lr_spline_age|dt,0.8151,0.8168,0.8158
+loc,pair:et30_mf1+lgbm_slow|dt,0.8149,0.8219,0.8177
+loc,pair:cat_reg+lr_spline_age|dt,0.8136,0.8141,0.8138
+loc,pair:et30_mf1+cat_reg|dt,0.8127,0.8191,0.8153
+loc,pair:et30_mf1+lr_spline_age|full,0.8135,0.8112,0.8126
+loc,pair:lgbm_slow+lr_spline_age|full,0.8093,0.8075,0.8086
+loc,pair:et30_mf1+lgbm_slow|full,0.8104,0.8208,0.8146
+loc,pair:cat_reg+lr_spline_age|full,0.8092,0.8073,0.8085
+loc,pair:et30_mf1+cat_reg|full,0.8097,0.819,0.8134
+loc,s02~,0.8104,0.8208,0.8146
+loc,s02~ -et30_mf1|full,0.8075,0.8163,0.811
+loc,s02~ -lgbm_slow|full,0.8104,0.8225,0.8153
+loc,s03~,0.8118,0.8171,0.8139
+loc,s03~ -et30_mf1|full,0.8093,0.8075,0.8086
+loc,s03~ -lgbm_slow|full,0.8135,0.8112,0.8126
+loc,s03~ -lr_spline_age|full,0.8104,0.8208,0.8146
+loc,s04~,0.8165,0.8201,0.8179
+loc,s04~ -et30_mf1|dt,0.8151,0.8168,0.8158
+loc,s04~ -lgbm_slow|dt,0.8156,0.8187,0.8168
+loc,s04~ -lr_spline_age|dt,0.8149,0.8219,0.8177
+loc2,best_individual:lgbm_slow|full,0.8191,0.8185,0.8189
+loc2,pair:et30_mf1+lr_spline_age|dt,0.8162,0.8193,0.8175
+loc2,pair:lgbm_slow+lr_spline_age|dt,0.8165,0.8162,0.8164
+loc2,pair:et30_mf1+lgbm_slow|dt,0.8174,0.8219,0.8192
+loc2,pair:cat_reg+lr_spline_age|dt,0.8156,0.8151,0.8154
+loc2,pair:et30_mf1+cat_reg|dt,0.8146,0.8203,0.8169
+loc2,pair:et30_mf1+lr_spline_age|full,0.8195,0.8188,0.8193
+loc2,pair:lgbm_slow+lr_spline_age|full,0.8173,0.8162,0.8169
+loc2,pair:et30_mf1+lgbm_slow|full,0.8189,0.8221,0.8202
+loc2,pair:cat_reg+lr_spline_age|full,0.816,0.8153,0.8157
+loc2,pair:et30_mf1+cat_reg|full,0.8162,0.8205,0.818
+loc2,s02~,0.8189,0.8221,0.8202
+loc2,s02~ -et30_mf1|full,0.8191,0.8185,0.8189
+loc2,s02~ -lgbm_slow|full,0.8139,0.8233,0.8177
+loc2,s03~,0.8199,0.8198,0.8199
+loc2,s03~ -et30_mf1|full,0.8173,0.8162,0.8169
+loc2,s03~ -lgbm_slow|full,0.8195,0.8188,0.8193
+loc2,s03~ -lr_spline_age|full,0.8189,0.8221,0.8202
+loc2,s04~,0.8162,0.8201,0.8177
+loc2,s04~ -et30_mf1|dt,0.8165,0.8162,0.8164
+loc2,s04~ -lgbm_slow|dt,0.8162,0.8193,0.8175
+loc2,s04~ -lr_spline_age|dt,0.8174,0.8219,0.8192
+dist2,best_individual:et30_mf1|dt,0.8128,0.8179,0.8148
+dist2,pair:et30_mf1+lr_spline_age|dt,0.8156,0.8163,0.8159
+dist2,pair:lgbm_slow+lr_spline_age|dt,0.8176,0.8148,0.8165
+dist2,pair:et30_mf1+lgbm_slow|dt,0.811,0.8177,0.8137
+dist2,pair:cat_reg+lr_spline_age|dt,0.8118,0.8145,0.8129
+dist2,pair:et30_mf1+cat_reg|dt,0.8062,0.8165,0.8103
+dist2,pair:et30_mf1+lr_spline_age|full,0.8117,0.8076,0.8101
+dist2,pair:lgbm_slow+lr_spline_age|full,0.8091,0.8046,0.8073
+dist2,pair:et30_mf1+lgbm_slow|full,0.8067,0.8154,0.8101
+dist2,pair:cat_reg+lr_spline_age|full,0.8049,0.8026,0.804
+dist2,pair:et30_mf1+cat_reg|full,0.8065,0.8123,0.8088
+dist2,s02~,0.8067,0.8154,0.8101
+dist2,s02~ -et30_mf1|full,0.8055,0.8102,0.8073
+dist2,s02~ -lgbm_slow|full,0.8091,0.817,0.8123
+dist2,s03~,0.8091,0.813,0.8106
+dist2,s03~ -et30_mf1|full,0.8091,0.8046,0.8073
+dist2,s03~ -lgbm_slow|full,0.8117,0.8076,0.8101
+dist2,s03~ -lr_spline_age|full,0.8067,0.8154,0.8101
+dist2,s04~,0.8153,0.817,0.816
+dist2,s04~ -et30_mf1|dt,0.8176,0.8148,0.8165
+dist2,s04~ -lgbm_slow|dt,0.8156,0.8163,0.8159
+dist2,s04~ -lr_spline_age|dt,0.811,0.8177,0.8137
