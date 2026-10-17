@@ -1,5 +1,6 @@
 """Fábrica de modelos con configuraciones explícitas (sin búsqueda automática)."""
 from sklearn.dummy import DummyClassifier
+from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
 from sklearn.pipeline import make_pipeline
@@ -15,6 +16,9 @@ def _spl(cols, C=1.0, k=6, inter=False):
     return make_pipeline(*steps, StandardScaler(), LogisticRegression(C=C, max_iter=5000))
 
 def make(name, seed=42):
+    if name == "svm_rbf": return make_pipeline(StandardScaler(), SVC(C=1.0, gamma="scale", probability=True, random_state=seed))
+    if name == "svm_rbf_c03": return make_pipeline(StandardScaler(), SVC(C=0.3, gamma="scale", probability=True, random_state=seed))
+    if name == "svm_rbf_c3": return make_pipeline(StandardScaler(), SVC(C=3.0, gamma="scale", probability=True, random_state=seed))
     if name == "lr_spl_ay": return _spl(["age", "year"])
     if name == "lr_spl_ay_c01": return _spl(["age", "year"], C=0.1)
     if name == "lr_spl_ay_int": return _spl(["age", "year"], C=0.05, k=5, inter=True)
