@@ -1,0 +1,240 @@
+shapes (3146, 13) (1030, 12) (4176, 18) (1030, 3)
+labels {1: 2047, 0: 1099}
+ID unique True True True overlap tr/te 0
+climate covers True
+ss order == test order True
+
+nulls train
+ Series([], dtype: int64)
+nulls test
+ Series([], dtype: int64)
+nulls clim
+ Series([], dtype: int64)
+ID                          str
+zone                        str
+gender                      str
+deathdate                   str
+age                     float64
+avg_temperature         float64
+max_temperature         float64
+min_temperature         float64
+precipitation           float64
+latitude                float64
+longitude               float64
+location                    str
+is_climate_sensitive      int64
+dtype: object
+
+ zone 2 2 test-new: []
+is_climate_sensitive     0     1   All
+zone                                  
+Peri_urban             422   752  1174
+Rural                  677  1295  1972
+All                   1099  2047  3146
+zone
+Rural         785
+Peri_urban    245
+Name: count, dtype: int64
+
+ gender 2 2 test-new: []
+is_climate_sensitive     0     1   All
+gender                                
+Female                 493  1008  1501
+Male                   606  1039  1645
+All                   1099  2047  3146
+gender
+Male      531
+Female    499
+Name: count, dtype: int64
+
+ location 39 11 test-new: ['Bubago, Kamuli, Uganda', 'Bukoteka, Bugweri, Uganda', 'Bunyama, Kagoonya, Bujumba, Kalangala, Uganda', 'Buseyi, Iganga, Uganda', 'Busowobi Central, Iganga, Uganda', 'Kayanga, Mitooma, Western Region, Uganda', 'Lubaale, Lwemiyaga, Sembabule, Uganda', 'Matovu, Bugweri, Uganda', 'Nabitovu, Iganga, Uganda', 'Nakalama, Iganga, Uganda']
+                       count       mean  ...        75%         max
+age                   3146.0  24.243484  ...  49.000000  110.000000
+avg_temperature       3146.0  22.066541  ...  22.652860   27.012223
+max_temperature       3146.0  26.206879  ...  27.015877   34.080947
+min_temperature       3146.0  18.514193  ...  19.040655   21.849602
+precipitation         3146.0   1.519907  ...   2.222345   16.606523
+latitude              3146.0   0.630242  ...   0.608396    1.187892
+longitude             3146.0  33.407442  ...  33.519695   34.226647
+is_climate_sensitive  3146.0   0.650668  ...   1.000000    1.000000
+
+[8 rows x 8 columns]
+
+date range 2007-10-02 00:00:00 2022-12-13 00:00:00 2007-11-24 00:00:00 2022-05-17 00:00:00
+is_climate_sensitive    0    1
+dd                            
+2007                    0    1
+2008                   23   90
+2009                  102  342
+2010                   77  257
+2011                  109  210
+2012                   73  173
+2013                  118  152
+2014                   59  130
+2015                   74  118
+2016                   77  130
+2017                   32   43
+2018                   38   45
+2019                   85   72
+2020                   86   98
+2021                  125  145
+2022                   21   41
+dd
+2007      1
+2008     27
+2009    159
+2010    116
+2011    103
+2012     84
+2013     91
+2014     62
+2015     67
+2016     63
+2017     19
+2018     18
+2019     49
+2020     59
+2021     89
+2022     23
+Name: count, dtype: int64
+dates train 2210 test 912 shared 466 test rows w/ date in train 0.5194174757281553
+date match main vs climate 1.0
+avg_temperature dates with >1 value: 0 / 2656
+max_temperature dates with >1 value: 0 / 2656
+min_temperature dates with >1 value: 0 / 2656
+precipitation dates with >1 value: 0 / 2656
+dates with >1 location 986
+tavg_7d dates>1 val 665
+tavg_7d coords>1 val 55 / 55
+rain_sum_30d dates>1 val 904
+rain_sum_30d coords>1 val 55 / 55
+ndvi_30d dates>1 val 904
+ndvi_30d coords>1 val 55 / 55
+elevation dates>1 val 904
+elevation coords>1 val 0 / 55
+
+locations 49 coord pairs 55
+locations w/ >1 coords
+                             latitude  longitude
+location                                       
+Bubago, Kamuli, Uganda             2          2
+Nakavule B, Iganga, Uganda         2          2
+Nakigo I, Iganga, Uganda           2          2
+Nawanzu, Iganga, Uganda            2          2
+Wairama, Iganga, Uganda            2          2
+Walanga, Bugweri, Uganda           2          2
+Wante, Bugweri, Uganda             2          2
+coords w/ >1 name 1
+district location
+Iganga          2307
+Bikadho Road     418
+Bugweri          317
+Mayuge           207
+Mbale City       158
+Kaliro Road      155
+Lwemiyaga        130
+Kasonga          128
+Kagoonya         116
+Kamuli            64
+Namakunyu         61
+Mitooma           61
+Entebbe Road      41
+Entebbe City      13
+Name: count, dtype: int64
+                                                        mean  size
+location                                                          
+Buwoya, Entebbe City, Uganda                        0.500000     2
+Namadhi B, Mayuge, Uganda                           0.333333     3
+Bulubandi Central B, Iganga, Uganda                 0.666667     9
+Buwaya, Entebbe City, Uganda                        0.909091    11
+Bukoyo, Iganga, Uganda                              0.774194    31
+Nawampendo, Bugweri, Uganda                         0.735294    34
+Walugogo Estate, Iganga, Uganda                     0.617647    34
+Nakavule B, Iganga, Uganda                          0.605263    38
+Namirali, Iganga, Uganda                            0.564103    39
+Nakate Furniture, Entebbe Road, Akright City, M...  0.658537    41
+Nakavule A, Iganga, Uganda                          0.720930    43
+Izimba, Iganga, Uganda                              0.568182    44
+Buwaiswa, Mayuge, Uganda                            0.708333    48
+Nakigo I, Iganga, Uganda                            0.693878    49
+Kabayingire Primary School, Namakunyu, Mayuge, ...  0.639344    61
+Walanga, Bugweri, Uganda                            0.676923    65
+Bulyampindi Nursery School, Mayuge, Uganda          0.636364    66
+Nabidongha B, Iganga, Uganda                        0.636364    66
+Bukwaya, Iganga, Uganda                             0.721519    79
+Budhwege, Iganga, Uganda                            0.675000    80
+Kakombo, Iganga, Uganda                             0.650000    80
+Nakisenyi, Iganga, Uganda                           0.617284    81
+Buligo North, Iganga, Uganda                        0.592593    81
+Luyira, Mayuge, Uganda                              0.666667    90
+Kasokoso North, Iganga, Uganda                      0.652632    95
+Buluza, Iganga, Uganda                              0.635417    96
+Buligo South, Iganga, Uganda                        0.597938    97
+Wante, Bugweri, Uganda                              0.580000   100
+Kiboyo, Iganga, Uganda                              0.636364   110
+Kasokoso South, Iganga, Uganda                      0.701754   114
+Nakigo Ii, Iganga, Uganda                           0.706897   116
+Wairama, Iganga, Uganda                             0.661017   118
+Nawansinge, Iganga, Uganda                          0.658333   120
+Kabila, Kasonga, Kikuube, Western Region, Uganda    0.648438   128
+Nawanzu, Iganga, Uganda                             0.691781   146
+Bulumwaki Church of Uganda Primary School, Kali...  0.632258   155
+Magada, Mbale City, Bugisa sub-region, Eastern ...  0.639241   158
+Brac Uganda Iganga Regional Branch, Bikadho Roa...  0.623188   207
+Brac Uganda Iganga Regional Branch, Bikadho Roa...  0.639810   211
+
+exact dup rows (no ID/label) train 2 train+test 2
+dup groups label-consistent {1: 2}
+corr>0.95 []
+constant cols ['hot_days_30d']
+age vs label
+                   mean  size
+age                          
+(-1.0, 0.99]   0.787770  1112
+(0.99, 4.0]    0.922705   621
+(4.0, 14.0]    0.683761   117
+(14.0, 29.0]   0.482927   205
+(29.0, 49.0]   0.528125   320
+(49.0, 64.0]   0.406091   197
+(64.0, 79.0]   0.273356   289
+(79.0, 200.0]  0.319298   285
+month vs label
+        mean  size
+dd                
+1   0.693487   261
+2   0.650602   249
+3   0.596567   233
+4   0.678571   252
+5   0.662295   305
+6   0.652866   314
+7   0.665455   275
+8   0.641221   262
+9   0.612335   227
+10  0.609756   205
+11  0.690391   281
+12  0.631206   282
+train/test shift (mean)
+                              tr           te
+age                    24.243484    23.922330
+avg_temperature        22.066541    22.037558
+max_temperature        26.206879    26.136117
+min_temperature        18.514193    18.525843
+precipitation           1.519907     1.613889
+latitude                0.630242     0.382230
+longitude              33.407442    32.850191
+elevation            1157.584234  1160.933981
+hot_days_30d            0.000000     0.000000
+max_daily_rain_30d     19.994730    20.304382
+ndvi_30d                0.612745     0.624110
+ndvi_90d                0.615135     0.627426
+rain_days_30d          13.186904    13.086408
+rain_sum_30d          121.618228   121.608192
+rain_sum_7d            27.798972    28.717767
+rain_sum_90d          369.759995   365.464007
+slope                   0.508595     0.193004
+tavg_30d               22.054147    22.070160
+tavg_7d                22.049858    22.033759
+tavg_90d               22.074748    22.099128
+temp_range_mean_30d     7.772083     7.762337
+tmax_30d               28.303387    28.295306
+tmin_30d               17.085499    17.057579
