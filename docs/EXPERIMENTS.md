@@ -97,3 +97,11 @@ Ver `docs/P2_OPCIONALES.md`. Todo con 3 semillas, diferencias emparejadas frente
 - **Stacking logístico L2:** negativo en todos los esquemas.
 
 Sin candidatos nuevos; se mantienen s02/s03/s04.
+
+## Híbridos de s03
+
+Ver `docs/HIBRIDO_S03.md`. Dos variantes fijadas antes de evaluar, con 3 semillas:
+- **H1** (s03 con la LR sin clima): frente a s03, −0,0007 en loc2 y +0,0035 en dist2; frente a s04, +0,0011 y −0,0025.
+- **H2** (media s03/s04): frente a s03, −0,0019 y +0,0040; frente a s04, 0,0000 y −0,0019.
+
+Ambas quedan entre s03 y s04, sin dominar a ninguno. Sin candidato nuevo.

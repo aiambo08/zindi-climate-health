@@ -45,6 +45,7 @@ python src/verify.py submissions/s02_et30mf1_lgbmslow.csv /ruta/a/referencia.csv
 | `python lag.py [confirm]` | Ventana climática 31–90 días L1–L4 (cribado / confirmación 3 semillas + particiones alternativas) → `reports/lag/`, informe en `docs/LITERATURA.md` |
 | `python download_power.py` + `python weekly.py [confirm W3]` | Rezagos climáticos semanales 5–12 semanas (NASA POWER) W1–W3 → `reports/weekly/`, informe en `docs/REZAGOS_SEMANALES.md` |
 | `python p2.py dump 42/43/44` + `python p2.py eval` | P2 opcionales: calibración en [0,4, 0,6], interacciones edad × zona/mes, stacking L2 → `reports/p2/`, informe en `docs/P2_OPCIONALES.md` |
+| `python hybrid.py` | Híbridos de s03 H1/H2 sobre la caché de p2 → `reports/hybrid/`, informe en `docs/HIBRIDO_S03.md` |
 
 ## Estructura
 
