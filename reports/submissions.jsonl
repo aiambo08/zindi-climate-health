@@ -2,3 +2,4 @@
 {"file": "s02_et30mf1_lgbmslow.csv", "sha256_16": "4d0bd87c5cbc1309", "models": ["et30_mf1", "lgbm_slow"], "blocks": ["demo", "time", "orig", "clim"], "seeds": [42, 43, 44], "pos_rate": 0.69}
 {"file": "s03_et30mf1_lgbmslow_lrspline.csv", "sha256_16": "4285336f4b73e826", "models": ["et30_mf1", "lgbm_slow", "lr_spline_age"], "blocks": ["demo", "time", "orig", "clim"], "seeds": [42, 43, 44], "pos_rate": 0.708}
 {"file": "s04_dt_et30_lgbm_lrspline.csv", "sha256_16": "c42d3cae5548a4d9", "models": ["et30_mf1", "lgbm_slow", "lr_spline_age"], "blocks": ["demo", "time"], "seeds": [42, 43, 44], "pos_rate": 0.714}
+{"file": "s05_h1_et30full_lgbmfull_lrdt.csv", "sha256_16": "ac3922dd16b58155", "models": ["et30_mf1|full", "lgbm_slow|full", "lr_spline_age|dt"], "blocks": "mixed", "seeds": [42, 43, 44], "pos_rate": 0.71, "note": "sonda H1"}

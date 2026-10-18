@@ -37,3 +37,12 @@ Ningún híbrido domina a la vez a s03 y a s04. H1 y H2 quedan entre ambos:
 - frente a s04, ocurre lo contrario.
 
 Según el criterio fijado, no se genera candidato. s02, s03 y s04 siguen congelados. Hay una copia adicional de s03 fuera del repo, con el mismo sha256.
+
+## Sonda H1 (generada a petición)
+
+`python h1_sub.py` genera `submissions/s05_h1_et30full_lgbmfull_lrdt.csv` entrenando con todo el train y las semillas 42/43/44.
+- Antes de generarlo, el mismo código reproduce el s03 congelado: diferencia máxima 3,3e-16 y `TargetF1` idéntico.
+- sha256 del CSV: `ac3922dd16b58155ec6dec979e15d0fb0ed94eecdd653c1cfc8c1f2a88f6066f`.
+- Fracción de positivos predichos: 0,71. Cambian 18 etiquetas respecto a s03 y la correlación de `TargetRAUC` con s03 es 0,9982.
+
+No cumple el criterio de candidato: es solo una sonda. s02, s03 y s04 siguen congelados.

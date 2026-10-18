@@ -46,6 +46,7 @@ python src/verify.py submissions/s02_et30mf1_lgbmslow.csv /ruta/a/referencia.csv
 | `python download_power.py` + `python weekly.py [confirm W3]` | Rezagos climáticos semanales 5–12 semanas (NASA POWER) W1–W3 → `reports/weekly/`, informe en `docs/REZAGOS_SEMANALES.md` |
 | `python p2.py dump 42/43/44` + `python p2.py eval` | P2 opcionales: calibración en [0,4, 0,6], interacciones edad × zona/mes, stacking L2 → `reports/p2/`, informe en `docs/P2_OPCIONALES.md` |
 | `python hybrid.py` | Híbridos de s03 H1/H2 sobre la caché de p2 → `reports/hybrid/`, informe en `docs/HIBRIDO_S03.md` |
+| `python h1_sub.py` | Sonda H1 → `submissions/s05_h1_et30full_lgbmfull_lrdt.csv` (reproduce antes s03 congelado) |
 
 ## Estructura
 
