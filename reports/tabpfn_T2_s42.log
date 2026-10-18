@@ -1,0 +1,11 @@
+{'cfg': 'T2', 'seed': 42, 'scheme': 'loc2', 'fold': 0, 'n_train': 2532, 'fit_s': 0.3, 'pred_s': 11.8}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'loc2', 'fold': 1, 'n_train': 2493, 'fit_s': 0.1, 'pred_s': 12.1}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'loc2', 'fold': 2, 'n_train': 2510, 'fit_s': 0.1, 'pred_s': 12.1}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'loc2', 'fold': 3, 'n_train': 2525, 'fit_s': 0.1, 'pred_s': 12.7}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'loc2', 'fold': 4, 'n_train': 2524, 'fit_s': 0.1, 'pred_s': 12.1}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 0, 'n_train': 2947, 'fit_s': 0.1, 'pred_s': 16.4}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 1, 'n_train': 3092, 'fit_s': 0.2, 'pred_s': 17.6}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 2, 'n_train': 807, 'fit_s': 0.1, 'pred_s': 7.3}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 3, 'n_train': 3018, 'fit_s': 0.1, 'pred_s': 13.7}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 4, 'n_train': 2878, 'fit_s': 0.1, 'pred_s': 13.3}
+{'cfg': 'T2', 'seed': 42, 'scheme': 'dist2', 'fold': 5, 'n_train': 2988, 'fit_s': 0.1, 'pred_s': 13.7}

@@ -42,6 +42,9 @@ def features(df, blocks=("demo","time","orig","clim")):
         X["dndvi"] = df.ndvi_30d - df.ndvi_90d; X["trange_day"] = df.max_temperature - df.min_temperature
     if "geo" in blocks:
         X["latitude"] = df.latitude; X["longitude"] = df.longitude
+    if "clim_lag" in blocks:   # ventana 31–90 días antes de la muerte (≈ rezagos 5–12 semanas, Iganga/Mayuge, BMC Public Health 2025)
+        X["tavg_31_90d"] = (90 * df.tavg_90d - 30 * df.tavg_30d) / 60
+        X["rain_sum_31_90d"] = df.rain_sum_90d - df.rain_sum_30d
     return X
 
 def score(y, p):
