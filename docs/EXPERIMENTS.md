@@ -75,3 +75,7 @@ Ver `docs/FROZEN_DE.md`. s02/s03/s04 reproducidos exactamente (maxdiff 3e-16). l
 ## XGBoost / CatBoost regularizado
 
 Ver `docs/XGB_CAT.md`. Seis configuraciones (xgb_d2, xgb_d4, cat_d3_l10 × dt/full), semilla 42: todas por debajo de ET30 dt y de s04 en loc2 y en dist2, sin complementariedad de errores. No se confirma ninguna; se cierra con s02/s03/s04.
+
+## MLP pequeño (bloque neuronal acotado)
+
+Ver `docs/MLP.md`. N1–N4 (MLP tanh/lbfgs, alpha 1, semilla 42): todos peores que la LR de referencia y que s04 en los 5 folds loc2 y los 6 distritos dist2 (mejor: N1, loc2 0,7970 vs s04 0,8179). N2 no converge (2000 iteraciones). Sin confirmación ni media con s04; se mantienen s02/s03/s04.

@@ -4,6 +4,8 @@ from sklearn.svm import SVC
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
 from sklearn.pipeline import make_pipeline
+from sklearn.neural_network import MLPClassifier
+from sklearn.feature_selection import VarianceThreshold
 from sklearn.preprocessing import StandardScaler, SplineTransformer, PolynomialFeatures
 from sklearn.compose import ColumnTransformer
 from lightgbm import LGBMClassifier
@@ -17,6 +19,11 @@ def _spl(cols, C=1.0, k=6, inter=False):
     return make_pipeline(*steps, StandardScaler(), LogisticRegression(C=C, max_iter=5000))
 
 def make(name, seed=42):
+    if name in ("mlp16", "mlp32_16"):
+        h = (16,) if name == "mlp16" else (32, 16)
+        return make_pipeline(VarianceThreshold(0.0), StandardScaler(),
+                             MLPClassifier(hidden_layer_sizes=h, activation="tanh", solver="lbfgs", alpha=1.0, max_iter=2000,
+                                           max_fun=30000, tol=1e-5, early_stopping=False, random_state=seed))
     if name == "svm_rbf": return make_pipeline(StandardScaler(), SVC(C=1.0, gamma="scale", probability=True, random_state=seed))
     if name == "svm_rbf_c03": return make_pipeline(StandardScaler(), SVC(C=0.3, gamma="scale", probability=True, random_state=seed))
     if name == "svm_rbf_c3": return make_pipeline(StandardScaler(), SVC(C=3.0, gamma="scale", probability=True, random_state=seed))
