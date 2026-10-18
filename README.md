@@ -41,6 +41,8 @@ python src/verify.py submissions/s02_et30mf1_lgbmslow.csv /ruta/a/referencia.csv
 | `python ens.py a,b c,d` | Score OOF de promedios simples de probabilidades |
 | `python predict.py NOMBRE m1,m2 bloques SEMILLAS` | Entrena con todo train y escribe un CSV validado |
 | `python mlp.py` | Bloque MLP N1–N4 (cribado, semilla 42, loc2/dist2) → `reports/mlp/`, informe en `docs/MLP.md` |
+| `python tabpfn_exp.py` | TabPFN v2 T1/T2 (probabilidades de `tabpfn_dump.py` en venv aparte, `requirements-tabpfn.txt`) → `reports/tabpfn/`, informe en `docs/LITERATURA.md` |
+| `python lag.py [confirm]` | Ventana climática 31–90 días L1–L4 (cribado / confirmación 3 semillas + particiones alternativas) → `reports/lag/`, informe en `docs/LITERATURA.md` |
 
 ## Estructura
 
