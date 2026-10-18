@@ -23,7 +23,7 @@ Scores globales:
 - H2: loc2 0,8179, dist2 0,8143.
 - Referencias: s03 0,8198 / 0,8103 y s04 0,8179 / 0,8162.
 
-Las diferencias por semilla tienen el mismo signo con las 3 semillas en loc2 y dist2.
+Por semilla: frente a s03, H1 y H2 tienen el mismo signo con las 3 semillas en loc2 (negativo) y dist2 (positivo). Frente a s04, H1 da +0,0009/+0,0015/0,0000 en loc2 y H2 cambia de signo entre semillas (+0,0003/−0,0001/−0,0005).
 
 Por distrito (H1 vs s03):
 - Casi toda la ganancia en dist2 viene de Mbale City (+0,042), donde H1 corrige el colapso de la LR con clima.
