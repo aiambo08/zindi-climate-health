@@ -87,3 +87,13 @@ Ver `docs/LITERATURA.md`. TabPFN v2 (T1 dt / T2 full) queda por debajo de s04 en
 ## Rezagos climáticos semanales 5–12 semanas (NASA POWER)
 
 Ver `docs/REZAGOS_SEMANALES.md`. Series diarias públicas NASA POWER (ERA5/Open-Meteo abandonado por límite diario de la API). W1 (16 rezagos semanales) empeora; W2 (ventanas de la literatura) neutro; W3 (anomalías respecto a la climatología 2001–2006) +0,0011 loc2 / +0,0020 dist2 frente a R4 en los splits fijos, pero nulo o negativo en las 3 particiones loc2 alternativas. Sin confirmación; se mantienen s02/s03/s04.
+
+## P2 opcionales: calibración, interacciones edad × zona/mes y stacking
+
+Ver `docs/P2_OPCIONALES.md`. Todo con 3 semillas, diferencias emparejadas frente a s04 y 3 particiones loc2 alternativas; calibrador y stacker ajustados con OOF internos dentro de cada fold externo.
+- **Calibración isotónica en [0,4, 0,6]:** +0,0010 en loc2 (4/5 folds), pero −0,0008 en dist2 y −0,0005/+0,0003/0,0000 en las particiones alternativas.
+- **Temperature scaling:** control nulo, cambia 0 etiquetas.
+- **Interacciones edad × zona/mes en ET/LGBM:** peores que sin ellas, sobre todo en dist2 (−0,007 a −0,012).
+- **Stacking logístico L2:** negativo en todos los esquemas.
+
+Sin candidatos nuevos; se mantienen s02/s03/s04.
